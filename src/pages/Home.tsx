@@ -1,5 +1,13 @@
-import { Box } from '@chakra-ui/react';
+import { Flex, Heading, Text, VStack, Input } from '@chakra-ui/react';
+import { HomeHeader } from '../components/HomeHeader';
+import { SearchForm } from '../components/SearchForm';
 
 export function Home() {
-  return <Box>Home Page</Box>;
+  return (
+    <VStack w={'100vw'} h={'100vh'}>
+      <HomeHeader />
+
+      <SearchForm />
+    </VStack>
+  );
 }
