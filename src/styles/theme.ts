@@ -19,5 +19,13 @@ export const theme = extendTheme({
   fonts: {
     heading: 'Nunito',
     body: 'Nunito'
+  },
+  styles: {
+    global: {
+      body: {
+        bg: 'base.background',
+        color: 'base.text'
+      }
+    }
   }
 });
