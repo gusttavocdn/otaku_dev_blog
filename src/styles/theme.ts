@@ -25,6 +25,17 @@ export const theme = extendTheme({
       body: {
         bg: 'base.background',
         color: 'base.text'
+      },
+      h3: {
+        color: 'blue',
+        textDecoration: 'underline',
+        fontSize: 'xl'
+      },
+      code: {
+        display: 'block',
+        background: 'base.post',
+        webkitOverflowScrolling: 'touch',
+        borderRadius: 'md'
       }
     }
   }

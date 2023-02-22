@@ -1,6 +1,6 @@
-import { VStack, SimpleGrid } from '@chakra-ui/react';
+import { VStack } from '@chakra-ui/react';
 import { HomeHeader } from '../components/HomeHeader';
-import { PostCard } from '../components/PostCard';
+import { PostsList } from '../components/PostsList';
 import { SearchForm } from '../components/SearchForm';
 
 export function Home() {
@@ -11,13 +11,7 @@ export function Home() {
 
         <SearchForm />
 
-        <SimpleGrid columns={2} spacing={5} w='80%' maxW='864px'>
-          <PostCard />
-          <PostCard />
-          <PostCard />
-          <PostCard />
-          <PostCard />
-        </SimpleGrid>
+        <PostsList />
       </VStack>
     </VStack>
   );

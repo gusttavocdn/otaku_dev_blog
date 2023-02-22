@@ -10,6 +10,8 @@ export function HomeHeader() {
     async () => await getProfile('gusttavocdn')
   );
 
+  if (!data) return null;
+
   return (
     <Flex
       mt={100}
