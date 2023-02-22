@@ -1,27 +1,35 @@
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Flex, Heading, Icon, Link, Image, Text } from '@chakra-ui/react';
+import { useQuery } from '@tanstack/react-query';
 import { GithubLogo, Buildings, Users } from 'phosphor-react';
+import { getProfile } from '../services/getProfile';
 
 export function HomeHeader() {
+  const { data } = useQuery(
+    ['profile'],
+    async () => await getProfile('gusttavocdn')
+  );
+
   return (
     <Flex
       mt={100}
-      maxW={'864px'}
-      h={'212px'}
-      bg={'base.profile'}
-      borderRadius={'lg'}
+      w='864px'
+      maxW='864px'
+      h='212px'
+      bg='base.profile'
+      borderRadius='lg'
       p={8}
     >
       <Image
-        src='https://github.com/gusttavocdn.png'
+        src={data?.avatar_url}
         boxSize={'148px'}
         alt='Adm sentado em um muro'
         borderRadius={'lg'}
       />
-      <Flex ml={5} justifyContent='space-around' flexDir='column'>
-        <Flex justifyContent={'space-between'}>
+      <Flex ml={5} justifyContent='space-around' flexDir='column' w='full'>
+        <Flex justifyContent='space-between'>
           <Heading fontSize='2xl' color={'base.title'}>
-            Gustavo Silva
+            {data?.name}
           </Heading>
           <Link textAlign='center'>
             Github
@@ -29,19 +37,16 @@ export function HomeHeader() {
           </Link>
         </Flex>
 
-        <Text>
-          Desenvolvedor FullStack. Completamente apaixonado por técnologia,
-          animes e esportes.
-        </Text>
+        <Text>{data?.bio}</Text>
         <Flex as='footer' gap='1.5rem' alignItems='center'>
           <Flex as='span' justifyContent='center' alignItems='center' gap={1}>
-            <Icon as={GithubLogo} /> gusttavocdn
+            <Icon as={GithubLogo} /> {data?.login}
           </Flex>
           <Flex as='span' justifyContent='center' alignItems='center' gap={1}>
-            <Icon as={Buildings} /> Trybe
+            <Icon as={Buildings} /> {data?.company}
           </Flex>
           <Flex as='span' justifyContent='center' alignItems='center' gap={1}>
-            <Icon as={Users} /> 10 Followers
+            <Icon as={Users} /> {data?.followers} Followers
           </Flex>
         </Flex>
       </Flex>
