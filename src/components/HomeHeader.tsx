@@ -1,8 +1,9 @@
 import { ExternalLinkIcon } from '@chakra-ui/icons';
-import { Flex, Heading, Icon, Link, Image, Text } from '@chakra-ui/react';
+import { Flex, Heading, Icon, Image, Text } from '@chakra-ui/react';
 import { useQuery } from '@tanstack/react-query';
 import { GithubLogo, Buildings, Users } from 'phosphor-react';
 import { getProfile } from '../services/getProfile';
+import { Link } from './Link';
 
 export function HomeHeader() {
   const { data } = useQuery(
@@ -33,7 +34,7 @@ export function HomeHeader() {
           <Heading fontSize='2xl' color={'base.title'}>
             {data?.name}
           </Heading>
-          <Link textAlign='center'>
+          <Link to='https://github.com/gusttavocdn'>
             Github
             <ExternalLinkIcon mb={1} ml={1} boxSize={5} />
           </Link>

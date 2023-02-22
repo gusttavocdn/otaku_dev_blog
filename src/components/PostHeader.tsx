@@ -1,6 +1,7 @@
 import { ChevronLeftIcon, ExternalLinkIcon } from '@chakra-ui/icons';
-import { Flex, Heading, Icon, Link } from '@chakra-ui/react';
+import { Flex, Heading, Icon } from '@chakra-ui/react';
 import { GithubLogo, Buildings, Users } from 'phosphor-react';
+import { Link } from './Link';
 
 type Props = {
   title: string;
@@ -23,11 +24,11 @@ export function PostHeader({ title, user, comments }: Props) {
     >
       <Flex justifyContent='space-around' flexDir='column' w='full'>
         <Flex justifyContent={'space-between'}>
-          <Link textAlign='center'>
+          <Link to='/'>
             <ChevronLeftIcon mb={1} ml={1} boxSize={5} />
             Voltar
           </Link>
-          <Link textAlign='center'>
+          <Link to='https://github.com/gusttavocdn'>
             Github
             <ExternalLinkIcon mb={1} ml={1} boxSize={5} />
           </Link>

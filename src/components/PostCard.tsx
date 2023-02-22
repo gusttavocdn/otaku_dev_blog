@@ -10,7 +10,7 @@ type Props = {
 export function PostCard({ title, body, issue }: Props) {
   return (
     <Link to={`/posts/${issue}`}>
-      <Card bg='base.post' minH='250px' maxW='416px' pt={5}>
+      <Card bg='base.post' minH='250px' pt={5}>
         <CardHeader
           color='base.title'
           display='flex'

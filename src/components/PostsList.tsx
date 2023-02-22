@@ -9,7 +9,7 @@ export function PostsList() {
   if (!data) return null;
 
   return (
-    <SimpleGrid columns={2} spacing={5} w='80%' maxW='864px'>
+    <SimpleGrid columns={[1, 1, 1, 2]} spacing={5} w='full' maxW='864px'>
       {data.length > 0 &&
         data.map((post) => (
           <PostCard
