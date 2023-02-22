@@ -1,4 +1,4 @@
-import { VStack, Flex, Heading, Input, Text } from '@chakra-ui/react';
+import { Flex, Heading, Input, Text } from '@chakra-ui/react';
 
 export function SearchForm() {
   return (

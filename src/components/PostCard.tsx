@@ -2,7 +2,7 @@ import { Card, CardHeader, Heading, CardBody, Text } from '@chakra-ui/react';
 
 export function PostCard() {
   return (
-    <Card bg='base.post' h='260px' pt={5}>
+    <Card bg='base.post' minH='250px' maxW='416px' pt={5}>
       <CardHeader
         color='base.title'
         display='flex'

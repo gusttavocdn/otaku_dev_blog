@@ -1,14 +1,4 @@
-import {
-  Flex,
-  Heading,
-  Text,
-  VStack,
-  Input,
-  Card,
-  CardHeader,
-  CardBody,
-  SimpleGrid,
-} from '@chakra-ui/react';
+import { VStack, SimpleGrid } from '@chakra-ui/react';
 import { HomeHeader } from '../components/HomeHeader';
 import { PostCard } from '../components/PostCard';
 import { SearchForm } from '../components/SearchForm';
