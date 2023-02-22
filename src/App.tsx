@@ -1,12 +1,12 @@
 import { ChakraBaseProvider } from '@chakra-ui/react';
-import { Home } from './pages/Home';
-import { Post } from './pages/Post';
+
+import { Routes } from './Routes';
 import { theme } from './styles/theme';
 
 function App() {
   return (
     <ChakraBaseProvider theme={theme}>
-      <Post />
+      <Routes />
     </ChakraBaseProvider>
   );
 }
