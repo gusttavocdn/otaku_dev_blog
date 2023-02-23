@@ -31,10 +31,10 @@ export function HomeHeader() {
       />
       <Flex
         ml={5}
-        justifyContent='space-around'
         flexDir='column'
         w='full'
         mt={{ base: 10, md: 0 }}
+        gap={{ base: 0, md: 5 }}
       >
         <Flex justifyContent='space-between'>
           <Heading fontSize='2xl' color={'base.title'}>
