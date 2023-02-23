@@ -16,12 +16,12 @@ export function HomeHeader() {
   return (
     <Flex
       mt={100}
-      w='864px'
       maxW='864px'
-      h='212px'
       bg='base.profile'
       borderRadius='lg'
       p={8}
+      flexDir={{ base: 'column', md: 'row' }}
+      alignItems={{ base: 'center', md: 'flex-start' }}
     >
       <Image
         src={data?.avatar_url}
@@ -29,7 +29,13 @@ export function HomeHeader() {
         alt='Adm sentado em um muro'
         borderRadius={'lg'}
       />
-      <Flex ml={5} justifyContent='space-around' flexDir='column' w='full'>
+      <Flex
+        ml={5}
+        justifyContent='space-around'
+        flexDir='column'
+        w='full'
+        mt={{ base: 10, md: 0 }}
+      >
         <Flex justifyContent='space-between'>
           <Heading fontSize='2xl' color={'base.title'}>
             {data?.name}
@@ -41,7 +47,13 @@ export function HomeHeader() {
         </Flex>
 
         <Text>{data?.bio}</Text>
-        <Flex as='footer' gap='1.5rem' alignItems='center'>
+
+        <Flex
+          as='footer'
+          gap='1.5rem'
+          alignItems='center'
+          mt={{ base: 5, md: 0 }}
+        >
           <Flex as='span' justifyContent='center' alignItems='center' gap={1}>
             <Icon as={GithubLogo} /> {data?.login}
           </Flex>

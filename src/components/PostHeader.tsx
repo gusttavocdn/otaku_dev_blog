@@ -15,15 +15,14 @@ export function PostHeader({ title, user, comments }: Props) {
   return (
     <Flex
       mt={100}
-      w='864px'
       maxW='864px'
-      h={'212px'}
+      w='full'
       bg={'base.profile'}
       borderRadius={'lg'}
       p={8}
     >
       <Flex justifyContent='space-around' flexDir='column' w='full'>
-        <Flex justifyContent={'space-between'}>
+        <Flex justifyContent={'space-between'} mb={5}>
           <Link to='/'>
             <ChevronLeftIcon mb={1} ml={1} boxSize={5} />
             Voltar
@@ -34,9 +33,16 @@ export function PostHeader({ title, user, comments }: Props) {
           </Link>
         </Flex>
 
-        <Heading>{title}</Heading>
+        <Heading mb={5} textAlign={{ base: 'center', md: 'start' }}>
+          {title}
+        </Heading>
 
-        <Flex as='footer' gap='1.5rem' alignItems='center'>
+        <Flex
+          as='footer'
+          gap='1.5rem'
+          alignItems='center'
+          flexDir={{ base: 'column', md: 'row' }}
+        >
           <Flex as='span' justifyContent='center' alignItems='center' gap={1}>
             <Icon as={GithubLogo} /> {user.login}
           </Flex>
