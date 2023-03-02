@@ -2,7 +2,7 @@ import { Flex, FormControl, Heading, Input, Text } from '@chakra-ui/react';
 import { usePosts } from '../hooks/usePosts';
 
 export function SearchForm() {
-  const { getFilteredPosts } = usePosts();
+  const { getFilteredPosts, posts } = usePosts();
 
   return (
     <Flex flexDir={'column'} maxW={'864px'} w='100%'>
@@ -11,7 +11,7 @@ export function SearchForm() {
           Publicações
         </Heading>
         <Text alignSelf='self-end' fontSize='sm'>
-          6 publicações
+          {posts?.length} {posts?.length === 1 ? 'publicação' : 'publicações'}
         </Text>
       </Flex>
       <FormControl>
