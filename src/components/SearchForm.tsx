@@ -20,6 +20,7 @@ export function SearchForm() {
           h='50px'
           px='12px'
           py='16px'
+          borderColor='base.border'
           placeholder='Buscar conteúdo'
           w='100%'
           onChange={({ target }) => getFilteredPosts(target.value)}

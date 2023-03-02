@@ -14,6 +14,9 @@ export function Link({ children, to }: Props) {
       textAlign='center'
       color='blue'
       fontWeight='bold'
+      _hover={{
+        transform: 'scale(1.02)',
+      }}
     >
       {children}
     </ChakraLink>

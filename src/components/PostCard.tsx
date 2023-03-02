@@ -1,7 +1,7 @@
 import { Card, CardHeader, Heading, CardBody, Text } from '@chakra-ui/react';
 import { formatDistanceToNow } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
-import { Link } from 'react-router-dom';
+import { Link } from './Link';
 
 type Props = {
   title: string;
@@ -18,7 +18,14 @@ export function PostCard({ title, body, issue, date }: Props) {
 
   return (
     <Link to={`/posts/${issue}`}>
-      <Card bg='base.post' minH='250px' pt={5}>
+      <Card
+        bg='base.post'
+        minH='250px'
+        pt={5}
+        borderRadius='md'
+        borderColor='base.border'
+        borderWidth='1.5px'
+      >
         <CardHeader
           color='base.title'
           display='flex'
