@@ -13,6 +13,7 @@ export function PostsList() {
           title={post.title}
           body={post.body}
           issue={post.number}
+          date={post.created_at}
         />
       ))}
     </SimpleGrid>
