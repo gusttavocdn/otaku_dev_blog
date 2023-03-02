@@ -15,7 +15,6 @@ export function HomeHeader() {
 
   return (
     <Flex
-      mt={100}
       maxW='864px'
       bg='base.profile'
       borderRadius='lg'

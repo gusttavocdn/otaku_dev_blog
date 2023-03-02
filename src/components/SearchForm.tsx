@@ -1,6 +1,9 @@
-import { Flex, Heading, Input, Text } from '@chakra-ui/react';
+import { Flex, FormControl, Heading, Input, Text } from '@chakra-ui/react';
+import { usePosts } from '../hooks/usePosts';
 
 export function SearchForm() {
+  const { getFilteredPosts } = usePosts();
+
   return (
     <Flex flexDir={'column'} maxW={'864px'} w='100%'>
       <Flex mb={4} justifyContent='space-between'>
@@ -11,14 +14,17 @@ export function SearchForm() {
           6 publicações
         </Text>
       </Flex>
-      <Input
-        borderRadius='6px'
-        h='50px'
-        px='12px'
-        py='16px'
-        placeholder='Buscar conteúdo'
-        w='100%'
-      />
+      <FormControl>
+        <Input
+          borderRadius='6px'
+          h='50px'
+          px='12px'
+          py='16px'
+          placeholder='Buscar conteúdo'
+          w='100%'
+          onChange={({ target }) => getFilteredPosts(target.value)}
+        />
+      </FormControl>
     </Flex>
   );
 }
